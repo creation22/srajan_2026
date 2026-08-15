@@ -64,7 +64,7 @@ export default function CodePost() {
           <p>and most of all, enjoy the ride</p>
           <p>this is your time to learn how to really build</p>
           <p>you've got this</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

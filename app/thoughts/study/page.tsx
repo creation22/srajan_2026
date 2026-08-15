@@ -44,7 +44,7 @@ export default function StudyPost() {
           <h2 className="text-lg font-semibold text-foreground pt-4">take time off</h2>
           <p>if you're working 24/7, you'll burn out. spend time with loved ones and have fun. remember: "it's just part of your life, not your whole life."</p>
           <p>that's all for now. thanks for being here.</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

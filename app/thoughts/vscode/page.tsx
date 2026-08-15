@@ -33,7 +33,7 @@ export default function VscodePost() {
           <p>ai tools like cursor make coding faster, but they can slow your growth if you rely on them too much. switching to vscode got me back to hands-on coding after my interview troubles. it's harder, but i'm learning again, and that feels right. i'm working on using ai wisely while keeping my skills strong.</p>
           <p>coding is about solving problems and growing. ai can help, but don't let it do everything.</p>
           <p className="font-medium text-foreground">don't automate the fun stuff.</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

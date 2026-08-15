@@ -21,7 +21,7 @@ export default function JournalPost() {
           <p>lately, i've been hating myself a little because the person i had committed to becoming and the person i am now feels totally different. i thought it was just skill-wise, but now i'm slowly observing other parts of life too.</p>
           <p>but even with all this, i really love what i'm doing right now.</p>
           <p>writing a lot of prompts, tweaking them a bit. learning more about design. reading here and there. playing chess for fun. and obviously, my first love, cricket. always wanted to bat like kohli. sometimes i actually play like him. and not gonna lie, sometimes i actually play like him. at least in my colony. i play the cover drives, the aggression, the calmness.</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

@@ -35,7 +35,7 @@ export default function HirePost() {
       <p>and that&apos;s it!</p>
       <p>i got this idea after reading sam&apos;s blog, and it really made things clear.</p>
       <p>getting hired isn&apos;t just about the interview, it&apos;s about showing you&apos;re the right fit from day one.</p>
-      <p className="pt-4">until then,<br />siddharth</p>
+      <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

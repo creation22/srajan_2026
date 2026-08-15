@@ -12,7 +12,7 @@ const ovo = Ovo({
 });
 
 export const metadata: Metadata = {
-  title: "sid",
+  title: "srajan",
   description: "21 yrs old eng, builder and more",
 };
 

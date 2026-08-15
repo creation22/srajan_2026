@@ -31,7 +31,7 @@ export default function DayPost() {
           <p>being an engineer? just one of the roles i juggle. like spider-man, but the only thing i'm swinging between is a dozen tabs and my task list.</p>
           <p>write the todos. write the code. write the story.</p>
           <p>but somehow, this chaos clicks together—barely. and i wouldn't have it any other way.</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

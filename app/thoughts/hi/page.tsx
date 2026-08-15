@@ -6,28 +6,28 @@ const tweetLink = "https://x.com/waitin4agi_/status/2045388581129330905";
 const hiImages = [
   {
     src: "/portfolio/key-6063.jpg",
-    alt: "Siddharth childhood photo",
+    alt: "srajan childhood photo",
     className: "sm:row-span-3",
     position: "center 42%",
     sizes: "(min-width: 640px) 20rem, 44vw",
   },
   {
     src: "/portfolio/key-3913.jpg",
-    alt: "Siddharth taking a mirror photo",
+    alt: "srajan taking a mirror photo",
     className: "",
     position: "center 55%",
     sizes: "(min-width: 640px) 12rem, 34vw",
   },
   {
     src: "/portfolio/key-4642.jpg",
-    alt: "Siddharth mirror portrait",
+    alt: "srajan mirror portrait",
     className: "",
     position: "center 54%",
     sizes: "(min-width: 640px) 12rem, 34vw",
   },
   {
     src: "/portfolio/key-4507.jpg",
-    alt: "Siddharth smiling",
+    alt: "srajan smiling",
     className: "",
     position: "center 40%",
     sizes: "(min-width: 640px) 12rem, 34vw",
@@ -95,7 +95,7 @@ export default function HiPost() {
       <p className="pt-4">
         all of my love,
         <br />
-        Siddharth
+        srajan
       </p>
     </ReflectionArticleLayout>
   );

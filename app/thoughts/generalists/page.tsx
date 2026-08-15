@@ -34,7 +34,7 @@ export default function GeneralistsPost() {
           <p>don't let anyone make you feel bad for being curious about many things. your diverse interests aren't a weakness—they're a superpower waiting to be unleashed.</p>
           <p>explore widely. learn constantly. connect the dots.</p>
           <p>the world needs more people who can see the whole picture, not just the pixels.</p>
-          <p className="pt-4">until then,<br />siddharth</p>
+          <p className="pt-4">until then,<br />srajan</p>
     </ReflectionArticleLayout>
   );
 }

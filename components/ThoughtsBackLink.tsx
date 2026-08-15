@@ -7,7 +7,7 @@ type ThoughtsBackLinkProps = {
 
 export default function ThoughtsBackLink({
   href = "/",
-  label = "sid",
+  label = "srajan",
 }: ThoughtsBackLinkProps) {
   return (
     <Link

@@ -1,25 +1,20 @@
-const projects = [
+const workProjects = [
   {
-    name: "friday",
-    link: "https://friday-q8eb.vercel.app/",
-    description: "is an AI-powered marketing operator.",
-  },
-  {
-    name: "proven",
-    link: "https://tryproven.framer.website/",
+    name: "dailygeeta.com",
+    link: "https://dailygeeta.com",
     description:
-      "a habit-tracking app that pays users for consistently completing daily habits or challenges",
+      "saas (acquired) — daily shloks with hindi audio explanation via sarvam ai",
   },
   {
-    name: "instant interior",
-    link: "https://www.instantinterior.ai/",
+    name: "riddlebox",
+    link: "https://riddlebox.heysrajan.com",
+    description: "multiplayer cs riddle game",
+  },
+  {
+    name: "altmangpt",
+    link: "https://atlmangpt.heysrajan.com",
     description:
-      "an ai-powered interior design tool that instantly transforms room and exterior photos into professional, photorealistic designs",
-  },
-  {
-    name: "learn to code",
-    link: "https://learntocode.notcodesid.com",
-    description: "a learn-to-code platform for beginners",
+      "answer your startup problems through sam altman blogs — rag + vector embeddings",
   },
 ];
 
@@ -43,7 +38,7 @@ export default function ProjectsSection({
       </Heading>
 
       <div className="space-y-6">
-        {projects.map((project) => (
+        {workProjects.map((project) => (
           <div key={project.name}>
             <p className="text-muted text-sm">
               <a

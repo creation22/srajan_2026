@@ -16,10 +16,10 @@ const details = [
   {
     label: "work/",
     value: "building",
-    linkLabel: "tryproven.framer.website",
-    href: "https://tryproven.framer.website/",
+    linkLabel: "dailygeeta.com",
+    href: "https://dailygeeta.com",
     secondaryHref: "/stuff",
-    secondaryLabel: "+4 more",
+    secondaryLabel: "+7 more",
   },
   {
     label: "writing/",

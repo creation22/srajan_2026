@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "srajan",
   description: "21 yrs old eng, builder and more",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.png?v=2",
+    shortcut: "/icon.png?v=2",
+    apple: "/icon.png?v=2",
   },
 };
 
@@ -30,6 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/icon.png?v=2" />
+        <link rel="shortcut icon" href="/icon.png?v=2" />
+        <link rel="apple-touch-icon" href="/icon.png?v=2" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -6,7 +6,7 @@ import meImage from "@/assets/me.png";
 export default function ProtectedImage() {
   return (
     <div
-      className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-[6px] bg-white/5 md:mx-0"
+      className="relative mx-auto w-full h-[22rem] sm:h-full overflow-hidden rounded-[6px] bg-white/5 md:mx-0"
       onContextMenu={(event) => event.preventDefault()}
     >
       <Image
@@ -15,8 +15,9 @@ export default function ProtectedImage() {
         priority
         draggable={false}
         onDragStart={(event) => event.preventDefault()}
-        sizes="(min-width: 1280px) 26rem, (min-width: 1024px) 35vw, 100vw"
-        className="h-auto w-full select-none object-cover opacity-90"
+        fill
+        sizes="(min-width: 1280px) 22rem, (min-width: 1024px) 30vw, 100vw"
+        className="select-none object-cover object-center opacity-90"
       />
       <div className="absolute inset-0" aria-hidden="true" />
     </div>

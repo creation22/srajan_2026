@@ -38,7 +38,7 @@ body {
 @media (min-width: 640px) {
   .home-grid {
     align-items: center;
-    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    grid-template-columns: minmax(14rem, 22rem) minmax(0, 1fr);
     gap: 3rem;
   }
 

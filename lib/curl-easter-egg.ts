@@ -66,9 +66,9 @@ export function buildCurlEasterEgg(): string {
         "math, code, writing, blockchain(solana), gaming virality, chess, sales & marketing",
       ),
     ),
-    detail("work/", ["building tryproven.framer.website +4 more"], [
-      "https://tryproven.framer.website/",
-      "https://notcodesid.com/stuff",
+    detail("work/", ["built dailygeeta.com +7 more"], [
+      "https://dailygeeta.com",
+      "/stuff",
     ]),
     detail("writing/", ["reflection and technical blogs"], [
       "https://notcodesid.com/reflection",

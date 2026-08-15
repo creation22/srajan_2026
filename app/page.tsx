@@ -12,7 +12,7 @@ const details = [
   },
   {
     label: "work/",
-    value: "building",
+    value: "built",
     linkLabel: "dailygeeta.com",
     href: "https://dailygeeta.com",
     secondaryHref: "/stuff",

@@ -12,7 +12,7 @@ export default function AboutToggle() {
         about/
       </p>
       <p className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
-        actively learning. always building. not stopping.{" "}
+        actively learning. always building.{" "}
         <button
           onClick={() => { setGamerOpen((v) => !v); setAcademicsOpen(false); }}
           className="underline decoration-white/35 underline-offset-4 transition hover:text-white hover:decoration-white text-white/72 font-semibold cursor-pointer"

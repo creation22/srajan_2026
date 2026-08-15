@@ -1,11 +1,8 @@
 import ProtectedImage from "@/components/ProtectedImage";
-import AboutToggle from "@/components/AboutToggle";
+import WhoToggle from "@/components/WhoToggle";
+import LiveAge from "@/components/LiveAge";
 
 const details = [
-  {
-    label: "who/",
-    value: "chasing knowledge, solving problems, failing loudly.",
-  },
   {
     label: "actively learning/",
     value: "code, writing, fullstack, marketing & sales, chess",
@@ -56,8 +53,11 @@ export default function Home() {
 
             <div className="grid gap-8 sm:gap-10">
 
-              {/* about row — interactive toggles */}
-              <AboutToggle />
+              {/* who section with interactive gamer & academics toggles */}
+              <WhoToggle />
+
+              {/* about section with real-time ticking age loop */}
+              <LiveAge />
 
               {details.map((item) => (
                 <div

@@ -34,7 +34,7 @@ export default function AboutToggle() {
         )}
         {academicsOpen && (
           <span className="block mt-1 text-white/50 text-[0.88rem]">
-            ↳ 92.4% in 10th &nbsp;·&nbsp; 94.2% in 12th — school topper. loves math.
+            ↳ 92.4% in 10th &nbsp;·&nbsp; 94.2% in 12th. loves math.
           </span>
         )}
       </p>

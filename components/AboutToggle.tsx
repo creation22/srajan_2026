@@ -29,7 +29,7 @@ export default function AboutToggle() {
         .
         {gamerOpen && (
           <span className="block mt-1 text-white/50 text-[0.88rem]">
-            ↳ chess 1700 elo &nbsp;·&nbsp; elite master ff — top 1% (2022)
+            ↳ chess 1700 elo &nbsp;·&nbsp; elite master free fire - top 1% (2022)
           </span>
         )}
         {academicsOpen && (

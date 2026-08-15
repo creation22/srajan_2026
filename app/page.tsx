@@ -1,8 +1,11 @@
 import ProtectedImage from "@/components/ProtectedImage";
-import WhoToggle from "@/components/WhoToggle";
-import LiveAge from "@/components/LiveAge";
+import AboutToggle from "@/components/AboutToggle";
 
 const details = [
+  {
+    label: "who/",
+    value: "chasing knowledge, solving problems, failing loudly.",
+  },
   {
     label: "actively learning/",
     value: "code, writing, fullstack, marketing & sales, chess",
@@ -52,14 +55,20 @@ export default function Home() {
             </p>
 
             <div className="grid gap-8 sm:gap-10">
+              {/* who section — plain text */}
+              <div className="home-detail-row grid min-w-0 gap-2">
+                <p className="text-[0.95rem] leading-none font-semibold text-white">
+                  who/
+                </p>
+                <p className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
+                  chasing knowledge, solving problems, failing loudly.
+                </p>
+              </div>
 
-              {/* who section with interactive gamer & academics toggles */}
-              <WhoToggle />
+              {/* about section — live age ticker + gamer & academics toggles */}
+              <AboutToggle />
 
-              {/* about section with real-time ticking age loop */}
-              <LiveAge />
-
-              {details.map((item) => (
+              {details.slice(1).map((item) => (
                 <div
                   key={item.label}
                   className="home-detail-row grid min-w-0 gap-2"

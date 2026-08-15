@@ -14,6 +14,10 @@ const details = [
     value: "code, writing, fullstack, marketing & sales, chess",
   },
   {
+    label: "ranked/",
+    value: "chess 1700 elo, elite master ff — top 1% (2022)",
+  },
+  {
     label: "work/",
     value: "building",
     linkLabel: "dailygeeta.com",

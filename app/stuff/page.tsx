@@ -3,53 +3,62 @@ import ThoughtsBackLink from "@/components/ThoughtsBackLink";
 const workProjects = [
   {
     name: "dailygeeta.com",
+    tag: "saas · acquired",
     link: "https://dailygeeta.com",
     description:
-      "saas (acquired) — receive one email daily with shloks + hindi audio explanation powered by sarvam ai",
+      "A daily spiritual learning product that delivers one Bhagavad Gita shlok every morning, with Hindi audio explanations powered by Sarvam AI.",
   },
   {
     name: "riddlebox",
+    tag: "multiplayer game",
     link: "https://riddlebox.heysrajan.com",
     description:
-      "multiplayer riddle game — answer cs riddles with friends in real time",
+      "A real-time multiplayer game where you and your friends compete to solve CS riddles as fast as possible.",
   },
   {
     name: "altmangpt",
+    tag: "ai / rag",
     link: "https://atlmangpt.heysrajan.com",
     description:
-      "answer your startup problems through sam altman blogs — rag based vector embeddings",
+      "Ask startup questions and get answers grounded in Sam Altman's writing, using RAG and vector embeddings to retrieve relevant insights from his blogs.",
   },
 ];
 
 const funProjects = [
   {
     name: "marveltimeline.space",
+    tag: "web app",
     link: "https://marveltimeline.space",
     description:
-      "in-order timeline to watch the entire marvel universe — built for beginners",
+      "A simple chronological guide to watching the entire Marvel universe, built for anyone who has no idea where to start.",
   },
   {
     name: "checkhiscount.space",
+    tag: "social experiment",
     link: "https://checkhiscount.space",
     description:
-      "check body count of your boyfriend by inserting his instagram id",
+      "Enter an Instagram username and get a playful estimate of someone's \"body count.\" Built as a fun experiment around social media data and internet culture.",
   },
   {
     name: "talksense",
+    tag: "chat analyzer",
     link: "https://talksense.heysrajan.com",
     description:
-      "export your whatsapp chat to understand how you are actually communicating",
+      "Upload your WhatsApp chat and discover how you actually communicate - from conversation patterns to who texts first and how the dynamic changes over time.",
   },
   {
     name: "rupeerush",
+    tag: "game",
     link: "https://rupeerush.srajan.online",
     description:
-      "hill climb racing game on the terrain of dollar vs rupee",
+      "A hill-climb racing game where the terrain is shaped by the USD/INR exchange rate. The rupee falls, the car climbs.",
   },
   {
     name: "bemyvalentine.fun",
+    tag: "web experiment",
     link: "https://bemyvalentine.fun",
-    description: "ask out your crush — the smoothest way possible",
+    description:
+      "A playful way to ask someone out, designed to make saying \"yes\" feel like the obvious choice.",
   },
 ];
 
@@ -71,7 +80,7 @@ export default function Stuff() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:gap-6">
+            <div className="grid gap-6 sm:gap-7">
               {workProjects.map((project, index) => (
                 <div
                   key={project.name}
@@ -81,15 +90,22 @@ export default function Stuff() {
                     {String(index + 1).padStart(2, "0")}/
                   </p>
                   <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
-                    >
-                      {project.name}
-                    </a>{" "}
-                    <span className="text-white/72">{project.description}</span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                      >
+                        {project.name}
+                      </a>
+                      <span className="text-white/50 text-[0.82rem] font-mono">
+                        [{project.tag}]
+                      </span>
+                    </div>
+                    <p className="mt-1 text-white/72 text-[0.92rem]">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -107,7 +123,7 @@ export default function Stuff() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:gap-6">
+            <div className="grid gap-6 sm:gap-7">
               {funProjects.map((project, index) => (
                 <div
                   key={project.name}
@@ -117,15 +133,22 @@ export default function Stuff() {
                     {String(index + 1).padStart(2, "0")}/
                   </p>
                   <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
-                    >
-                      {project.name}
-                    </a>{" "}
-                    <span className="text-white/72">{project.description}</span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                      >
+                        {project.name}
+                      </a>
+                      <span className="text-white/50 text-[0.82rem] font-mono">
+                        [{project.tag}]
+                      </span>
+                    </div>
+                    <p className="mt-1 text-white/72 text-[0.92rem]">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -141,7 +164,7 @@ export default function Stuff() {
                 rel="noopener noreferrer"
                 className="flex min-h-10 w-fit items-center text-[0.95rem] leading-relaxed font-semibold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
               >
-                more projects and experiments on github →
+                More projects, experiments, and things I probably shouldn&apos;t have built → github
               </a>
             </div>
           </div>

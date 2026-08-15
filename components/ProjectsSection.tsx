@@ -1,20 +1,24 @@
 const workProjects = [
   {
     name: "dailygeeta.com",
+    tag: "saas · acquired",
     link: "https://dailygeeta.com",
     description:
-      "saas (acquired) — daily shloks with hindi audio explanation via sarvam ai",
+      "A daily spiritual learning product delivering Bhagavad Gita shloks with Hindi audio powered by Sarvam AI.",
   },
   {
     name: "riddlebox",
+    tag: "multiplayer game",
     link: "https://riddlebox.heysrajan.com",
-    description: "multiplayer cs riddle game",
+    description:
+      "Real-time multiplayer game to solve CS riddles as fast as possible.",
   },
   {
     name: "altmangpt",
+    tag: "ai / rag",
     link: "https://atlmangpt.heysrajan.com",
     description:
-      "answer your startup problems through sam altman blogs — rag + vector embeddings",
+      "Ask startup questions grounded in Sam Altman's writing via RAG and vector embeddings.",
   },
 ];
 
@@ -49,7 +53,7 @@ export default function ProjectsSection({
               >
                 {project.name}
               </a>{" "}
-              - {project.description}
+              <span className="text-muted/60 text-xs font-mono">[{project.tag}]</span> - {project.description}
             </p>
           </div>
         ))}

@@ -1,5 +1,5 @@
 import ProtectedImage from "@/components/ProtectedImage";
-import GamerToggle from "@/components/GamerToggle";
+import AboutToggle from "@/components/AboutToggle";
 
 const details = [
   {
@@ -9,10 +9,6 @@ const details = [
   {
     label: "actively learning/",
     value: "code, writing, fullstack, marketing & sales, chess",
-  },
-  {
-    label: "academics/",
-    value: "94.2% in boards — school topper, before i knew what actually mattered.",
   },
   {
     label: "work/",
@@ -60,8 +56,8 @@ export default function Home() {
 
             <div className="grid gap-8 sm:gap-10">
 
-              {/* about row — interactive gamer toggle */}
-              <GamerToggle />
+              {/* about row — interactive toggles */}
+              <AboutToggle />
 
               {details.map((item) => (
                 <div

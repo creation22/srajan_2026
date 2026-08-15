@@ -71,27 +71,27 @@ export function buildCurlEasterEgg(): string {
       "/stuff",
     ]),
     detail("writing/", ["reflection and technical blogs"], [
-      "https://notcodesid.com/reflection",
-      "https://medium.com/@notcodesid",
+      "https://heysrajan.com/reflection",
+      "https://medium.com/@creation2224",
     ]),
     detail("links/", ["x, github, email, linkedin, cv, instagram"], [
-      "https://x.com/notcodesid",
-      "https://github.com/notcodesid",
-      "notcodesid@gmail.com",
-      "https://linkedin.com/in/sidharthh-pandro",
-      "https://notcodesid.com/cv",
-      "https://www.instagram.com/sid.ously/",
+      "https://x.com/_creation22",
+      "https://github.com/creation22",
+      "creation2224@gmail.com",
+      "https://linkedin.com/in/ssrajangupta22/",
+      "https://heysrajan.com/cv",
+      "https://www.instagram.com/srajangupta.x/",
     ]),
   ];
 
   return [
     "",
-    `${c.title}i'm sid${c.reset}`,
+    `${c.title}i'm srajan${c.reset}`,
     "",
     sections.join("\n\n"),
     "",
     `${c.line}${"─".repeat(48)}${c.reset}`,
-    `${c.muted}curl easter egg · open https://notcodesid.com in a browser${c.reset}`,
+    `${c.muted}curl easter egg · open https://heysrajan.com in a browser${c.reset}`,
     "",
   ].join("\n");
 }

@@ -6,61 +6,61 @@ const products = [
   {
     name: "summon",
     description: "pokemon go, but with real animals and on-chain collections.",
-    href: "https://github.com/notcodesid/Summon",
+    href: "https://github.com/creation22/Summon",
   },
   {
     name: "creativity",
     description:
       "a place to capture ideas, work on them, and prove you actually shipped.",
-    href: "https://github.com/notcodesid/createvity-boost",
+    href: "https://github.com/creation22/createvity-boost",
   },
   {
     name: "cluch",
     description:
       "live prediction battles with friends during sports matches, settled on-chain.",
-    href: "https://github.com/notcodesid/Cluch",
+    href: "https://github.com/creation22/Cluch",
   },
   {
     name: "learn-to-code",
     description: "help people write their first 1,000 lines of rust.",
-    href: "https://github.com/notcodesid/learn-to-code",
+    href: "https://github.com/creation22/learn-to-code",
   },
   {
     name: "read",
     description: "an offline, distraction-free reading app.",
-    href: "https://github.com/notcodesid/read",
+    href: "https://github.com/creation22/read",
   },
   {
     name: "veil",
     description: "trade privately, settle publicly.",
-    href: "https://github.com/notcodesid/veil",
+    href: "https://github.com/creation22/veil",
   },
   {
     name: "signal",
     description: "embedded ai inside all crypto protocols.",
-    href: "https://github.com/notcodesid/Signal",
+    href: "https://github.com/creation22/Signal",
   },
   {
     name: "shadow fuzzer",
     description:
       "a private sandbox for on-chain agents to simulate transactions without getting front-run.",
-    href: "https://github.com/notcodesid/shadow-fuzzer",
+    href: "https://github.com/creation22/shadow-fuzzer",
   },
   {
     name: "latent-tech-news",
     description:
       "a telegram bot that reads hacker news and sends short ai summaries of the best ai stories.",
-    href: "https://github.com/notcodesid/latent-tech-news",
+    href: "https://github.com/creation22/latent-tech-news",
   },
   {
     name: "friday",
     description: "an ai that helps distribute your product.",
-    href: "https://github.com/notcodesid/Friday",
+    href: "https://github.com/creation22/Friday",
   },
   {
     name: "scout",
     description: "a better way to find real yc jobs and generate cold emails worth sending.",
-    href: "https://github.com/notcodesid/scout",
+    href: "https://github.com/creation22/scout",
   },
 ];
 

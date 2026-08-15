@@ -8,7 +8,7 @@ import {
 
 export const dynamic = "force-dynamic";
 
-const DEFAULT_USERNAME = "notcodesid";
+const DEFAULT_USERNAME = "creation22";
 
 const contributionCalendarQuery = `
   query ContributionCalendar($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -114,7 +114,7 @@ async function fetchGitHubCalendar(
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
-      "User-Agent": "notcodesid-portfolio",
+      "User-Agent": "srajan-portfolio",
     },
     body: JSON.stringify({
       query: contributionCalendarQuery,

@@ -1,0 +1,143 @@
+import ProtectedImage from "@/components/ProtectedImage";
+
+const details = [
+  {
+    label: "who/",
+    value: "chasing knowledge, solving problems, failing loudly.",
+  },
+  {
+    label: "about/",
+    value: "actively learning. always building. not stopping.",
+  },
+  {
+    label: "actively learning/",
+    value: "code, writing, fullstack, marketing & sales, chess",
+  },
+  {
+    label: "work/",
+    value: "building",
+    linkLabel: "tryproven.framer.website",
+    href: "https://tryproven.framer.website/",
+    secondaryHref: "/stuff",
+    secondaryLabel: "+4 more",
+  },
+  {
+    label: "writing/",
+    value: "life logs",
+    href: "/reflection/life-logs",
+    secondaryHref: "/reflection/technical",
+    secondaryLabel: "technical",
+  },
+  {
+    label: "links/",
+    links: [
+      { label: "x", href: "https://x.com/_creation22" },
+      { label: "github", href: "https://github.com/creation22" },
+      { label: "email", href: "mailto:creation2224@gmail.com" },
+      {
+        label: "linkedin",
+        href: "https://linkedin.com/in/ssrajangupta22/",
+      },
+      { label: "leetcode", href: "https://leetcode.com/creation22" },
+      { label: "cv", href: "/cv" },
+      { label: "instagram", href: "https://www.instagram.com/srajangupta.x/" },
+    ],
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="home-shell flex min-h-[calc(100dvh-5rem)] items-center py-10 sm:py-14">
+      <section className="w-full">
+        <div className="home-grid">
+          <ProtectedImage />
+
+          <div className="grid min-w-0 gap-10 sm:gap-12">
+            <p className="text-[2.75rem] leading-none font-semibold text-white sm:text-[3.75rem]">
+              i&apos;m srajan
+            </p>
+
+            <div className="grid gap-8 sm:gap-10">
+              {details.map((item) => (
+                <div
+                  key={item.label}
+                  className="home-detail-row grid min-w-0 gap-2"
+                >
+                  <p className="text-[0.95rem] leading-none font-semibold text-white">
+                    {item.label}
+                  </p>
+
+                  {"links" in item && item.links ? (
+                    <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
+                      {item.links.map((link, index) => (
+                        <span key={link.label}>
+                          {index > 0 ? ", " : null}
+                          <a
+                            href={link.href}
+                            target={link.href.startsWith("http") ? "_blank" : undefined}
+                            rel={
+                              link.href.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            className="underline decoration-white/35 underline-offset-4 transition hover:text-white hover:decoration-white"
+                          >
+                            {link.label}
+                          </a>
+                        </span>
+                      ))}
+                    </div>
+                  ) : item.href ? (
+                    <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
+                      {"linkLabel" in item && item.linkLabel ? `${item.value} ` : null}
+
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          item.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="underline decoration-white/35 underline-offset-4 transition hover:text-white hover:decoration-white"
+                      >
+                        {"linkLabel" in item && item.linkLabel ? item.linkLabel : item.value}
+                      </a>
+
+                      {"secondaryHref" in item && item.secondaryHref ? (
+                        <>
+                          {" "}
+                          {"linkLabel" in item && item.linkLabel ? "" : "and "}
+                          <a
+                            href={item.secondaryHref}
+                            target={
+                              item.secondaryHref.startsWith("http")
+                                ? "_blank"
+                                : undefined
+                            }
+                            rel={
+                              item.secondaryHref.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            className="underline decoration-white/35 underline-offset-4 transition hover:text-white hover:decoration-white"
+                          >
+                            {item.secondaryLabel}
+                          </a>
+                        </>
+                      ) : null}
+                    </div>
+                  ) : (
+                    <p className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
+                      {item.value}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

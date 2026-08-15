@@ -11,7 +11,7 @@ export default function ProtectedImage() {
     >
       <Image
         src={meImage}
-        alt="sunflower illustration"
+        alt="wireframe chess king with math formulas"
         priority
         draggable={false}
         onDragStart={(event) => event.preventDefault()}

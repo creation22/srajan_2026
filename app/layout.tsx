@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import HireMeLink from "@/components/HireMeLink";
+import NewsletterLink from "@/components/NewsletterLink";
 
 const ovo = Ovo({
   weight: "400",
@@ -157,6 +158,7 @@ export default function RootLayout({
       <body className={`${ovo.variable} antialiased`}>
         <ThemeProvider>
           <HireMeLink />
+          <NewsletterLink />
           <div className="min-h-screen flex flex-col items-center">
             <div className="w-full max-w-2xl px-6 pt-20">
               <Navigation />

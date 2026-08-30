@@ -8,7 +8,12 @@ const MEDIUM_SUBSCRIBE_URL = "https://medium.com/subscribe/@creation2224";
 export default function NewsletterLink() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const label = pathname === "/" ? "newsletter" : "follow me on medium";
+  const isHome = pathname === "/";
+  const label = isHome ? "newsletter" : "follow me on medium";
+  const hasBackLink =
+    pathname === "/stuff" ||
+    pathname.startsWith("/reflection") ||
+    pathname.startsWith("/thoughts/");
 
   useEffect(() => {
     if (!open) return;
@@ -25,7 +30,11 @@ export default function NewsletterLink() {
 
   return (
     <>
-      <div className="fixed left-6 top-6 z-50 text-[0.95rem] leading-none font-semibold text-white sm:left-10 sm:top-10">
+      <div
+        className={`fixed left-6 z-50 text-[0.95rem] leading-none font-semibold text-white sm:left-10 ${
+          hasBackLink ? "top-11 sm:top-15" : "top-6 sm:top-10"
+        }`}
+      >
         <button
           type="button"
           onClick={() => setOpen(true)}

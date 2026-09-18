@@ -15,7 +15,7 @@ export default function HeaderLinks() {
         rel="noopener noreferrer"
         className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
       >
-        hire me
+        lets talk
       </a>
     </div>
   );

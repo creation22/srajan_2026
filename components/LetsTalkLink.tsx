@@ -1,4 +1,4 @@
-export default function HeaderLinks() {
+export default function LetsTalkLink() {
   return (
     <div className="fixed right-6 top-6 z-50 flex items-center gap-4 text-[0.95rem] leading-none font-semibold text-white sm:right-10 sm:top-10">
       <a

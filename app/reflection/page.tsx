@@ -1,6 +1,19 @@
 import Link from "next/link";
 import ThoughtsBackLink from "@/components/ThoughtsBackLink";
 
+const sections = [
+  {
+    title: "personal",
+    href: "/reflection/book",
+    note: "learnings, a book written one chapter at a time",
+  },
+  {
+    title: "blogs",
+    href: "/reflection/blogs",
+    note: "code, systems, ai, and marketing",
+  },
+];
+
 export default function ReflectionPage() {
   return (
     <main className="flex min-h-[calc(100dvh-5rem)] items-center py-10 sm:py-14">
@@ -18,31 +31,25 @@ export default function ReflectionPage() {
           </div>
 
           <div className="grid gap-5 sm:gap-6">
-            <div className="grid gap-2 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-4">
-              <p className="text-[0.95rem] leading-none font-semibold text-white">01/</p>
-              <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white">
-                <Link
-                  href="/reflection/life-logs"
-                  className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
-                >
-                  life logs
-                </Link>{" "}
-                <span className="text-white/72">thoughts, opinions, growth, and life</span>
+            {sections.map((section, index) => (
+              <div
+                key={section.href}
+                className="grid gap-2 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-4"
+              >
+                <p className="text-[0.95rem] leading-none font-semibold text-white">
+                  {String(index + 1).padStart(2, "0")}/
+                </p>
+                <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white">
+                  <Link
+                    href={section.href}
+                    className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                  >
+                    {section.title}
+                  </Link>{" "}
+                  <span className="text-white/72">{section.note}</span>
+                </div>
               </div>
-            </div>
-
-            <div className="grid gap-2 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-4">
-              <p className="text-[0.95rem] leading-none font-semibold text-white">02/</p>
-              <div className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white">
-                <Link
-                  href="/reflection/technical"
-                  className="underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
-                >
-                  technical
-                </Link>{" "}
-                <span className="text-white/72">code, systems, ai, and how things work</span>
-              </div>
-            </div>
+            ))}
           </div>
 
         </div>

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { buildCurlEasterEgg } from "@/lib/curl-easter-egg";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") ?? "";
 
   if (userAgent.toLowerCase().includes("curl")) {

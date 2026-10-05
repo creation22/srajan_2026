@@ -17,7 +17,7 @@ export default function Music() {
       <div className="text-base leading-relaxed">
         <h1 className="text-2xl font-semibold mb-2 text-foreground">anime/music</h1>
         <p className="text-muted mb-8">
-          anime i'm watching and playlists i've curated
+          anime i&apos;m watching and playlists i&apos;ve curated
         </p>
 
         <div className="flex flex-col gap-4">

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 const BIRTH_TIMESTAMP = new Date("2005-09-22T00:00:00+05:30").getTime();
 const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.2425;
+// whole years at load time, shown until the live counter starts
+const AGE_AT_LOAD = Math.floor((Date.now() - BIRTH_TIMESTAMP) / MS_PER_YEAR);
 
 export default function WhoAge() {
   const [ageStr, setAgeStr] = useState<string>("");
@@ -29,7 +31,10 @@ export default function WhoAge() {
         who/
       </p>
       <p className="max-w-xl text-[0.95rem] leading-relaxed font-semibold text-white/72">
-        <span className="font-mono text-white/90">{ageStr || "20"}</span>, m, india
+        <span className="font-mono text-white/90" suppressHydrationWarning>
+          {ageStr || AGE_AT_LOAD}
+        </span>
+        , m, india
       </p>
     </div>
   );

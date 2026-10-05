@@ -1,8 +1,7 @@
 import { MetadataRoute } from "next";
+import { siteUrl as baseUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://srajan_2026.vercel.app";
-
   return [
     {
       url: baseUrl,
@@ -23,13 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/reflection/life-logs`,
+      url: `${baseUrl}/reflection/blogs`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/reflection/technical`,
+      url: `${baseUrl}/reflection/book`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

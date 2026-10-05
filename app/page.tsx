@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import ProtectedImage from "@/components/ProtectedImage";
 import WhoAge from "@/components/WhoAge";
 import AboutToggle from "@/components/AboutToggle";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const details = [
   {
@@ -17,10 +24,10 @@ const details = [
   },
   {
     label: "writing/",
-    value: "life logs",
-    href: "/reflection/life-logs",
-    secondaryHref: "/reflection/technical",
-    secondaryLabel: "technical",
+    links: [
+      { label: "personal", href: "/reflection/book" },
+      { label: "blogs", href: "/reflection/blogs" },
+    ],
   },
   {
     label: "links/",

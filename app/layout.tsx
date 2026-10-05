@@ -4,16 +4,15 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
-import HireMeLink from "@/components/HireMeLink";
+import LetsTalkLink from "@/components/LetsTalkLink";
 import NewsletterLink from "@/components/NewsletterLink";
+import { siteUrl } from "@/lib/site";
 
 const ovo = Ovo({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-ovo",
 });
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://srajan_2026.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -79,9 +78,6 @@ export const metadata: Metadata = {
       "Chasing knowledge, solving problems, failing loudly. Creator of DailyGeeta, RiddleBox, and AltmanGPT.",
     creator: "@_creation22",
     images: ["/icon.png"],
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 
@@ -157,7 +153,7 @@ export default function RootLayout({
       </head>
       <body className={`${ovo.variable} antialiased`}>
         <ThemeProvider>
-          <HireMeLink />
+          <LetsTalkLink />
           <NewsletterLink />
           <div className="min-h-screen flex flex-col items-center">
             <div className="w-full max-w-2xl px-6 pt-20">

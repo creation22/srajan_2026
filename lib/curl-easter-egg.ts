@@ -68,9 +68,9 @@ export function buildCurlEasterEgg(): string {
     ),
     detail("work/", ["built dailygeeta.com +7 more"], [
       "https://dailygeeta.com",
-      "/stuff",
+      "https://heysrajan.com/stuff",
     ]),
-    detail("writing/", ["reflection and technical blogs"], [
+    detail("writing/", ["personal and blogs"], [
       "https://heysrajan.com/reflection",
       "https://medium.com/@creation2224",
     ]),

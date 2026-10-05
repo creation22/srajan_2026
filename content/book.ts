@@ -118,6 +118,8 @@ these are just some raw thoughts from today. i don't even know if i'll keep this
 but for now, there are still 87 days.
 
 let's see what happens.
+
+and honestly, i am incredibly grateful to God for all of this. for the work, for the people around me, and for the fact that i even get to spend time building my own stuff and learning the things i care about. a lot of people never get that chance. i don't want to waste it. so i am going to keep showing up, keep building, and release more of what i make, even when it isn't perfect.
 `,
     },
   ],

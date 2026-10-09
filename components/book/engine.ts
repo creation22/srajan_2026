@@ -5,12 +5,13 @@ import type { Book, Wallpaper } from "@/content/book";
 import { PAPER, PH, clamp, ctx2d, finishPage, makeCanvas, pageCanvas, type Pt } from "./paper";
 import { drawWallpaper, type Fonts } from "./scenes";
 import {
-  drawCover, drawEndingPage, drawEndpaper, drawTitlePage, drawWritingPage, numberWord, typesetChapter,
-  type WritingPage,
+  drawCover, drawEndingPage, drawEndpaper, drawIndexPage, drawTitlePage, drawWritingPage,
+  indexEntries, numberWord, typesetChapter, type IndexEntry, type WritingPage,
 } from "./pages";
 
 type Spread =
   | { kind: "cover" | "title" | "ending" | "back"; label: string }
+  | { kind: "index"; label: string; entries: IndexEntry[] }
   | { kind: "page"; label: string; wallpaper: Wallpaper; seed: number; page: WritingPage };
 
 type Pages = { L: HTMLCanvasElement | null; R: HTMLCanvasElement | null };
@@ -63,9 +64,17 @@ function buildSpreads(book: Book, fonts: Fonts): Spread[] {
   let number = 1;
   let shown = 0;
   let shared = 0;
-  for (const chapter of book.chapters) {
+  const written = book.chapters.map((chapter) => {
+    const pages = typesetChapter(chapter, fonts, number);
+    number += pages.length;
+    return { chapter, pages };
+  });
+  const entries = indexEntries(written);
+  const listed = entries.map((entry) => `${entry.title}, page ${entry.page}`).join("; ");
+  spreads.push({ kind: "index", entries, label: listed ? `Index: ${listed}` : "Index" });
+  for (const { chapter, pages } of written) {
     const own = chapter.wallpapers ?? [];
-    typesetChapter(chapter, fonts, number).forEach((page, j) => {
+    pages.forEach((page, j) => {
       const wallpaper = j < own.length ? own[j] : book.wallpapers[shared++ % book.wallpapers.length];
       spreads.push({
         kind: "page",
@@ -75,7 +84,6 @@ function buildSpreads(book: Book, fonts: Fonts): Spread[] {
         label: `Chapter ${numberWord(chapter.number)}, page ${page.number}${wallpaper.quote ? `, beside the quote “${wallpaper.quote}”` : "alt" in wallpaper && wallpaper.alt ? `, beside a picture: ${wallpaper.alt}` : ""}`,
       });
       shown++;
-      number++;
     });
   }
   spreads.push({ kind: "ending", label: `${book.ending.title}: ${book.ending.note}` });
@@ -147,6 +155,7 @@ export function mountBook(el: BookElements, opts: BookOptions) {
       if (sp.kind === "cover") return { L: null, R: drawCover(pw, "front", book, fonts) };
       if (sp.kind === "back") return { L: drawCover(pw, "back", book, fonts), R: null };
       if (sp.kind === "title") return { L: drawEndpaper(pw, "L"), R: drawTitlePage(pw, book, fonts) };
+      if (sp.kind === "index") return { L: drawEndpaper(pw, "L"), R: drawIndexPage(pw, sp.entries, fonts) };
       return { L: drawEndingPage(pw, book, fonts), R: drawEndpaper(pw, "R") };
     }
     const { c: L, g } = pageCanvas(pw);
@@ -783,7 +792,8 @@ export function mountBook(el: BookElements, opts: BookOptions) {
     indicator.textContent =
       sp.kind === "cover" ? "cover"
       : sp.kind === "title" ? "title"
-      : sp.kind === "page" ? `${sp.page.number} / ${SPREADS.length - 4}`
+      : sp.kind === "index" ? "index"
+      : sp.kind === "page" ? `${sp.page.number} / ${SPREADS.reduce((n, s) => n + (s.kind === "page" ? 1 : 0), 0)}`
       : sp.kind === "ending" ? "fin"
       : "back";
     prevBtn.disabled = index === 0;

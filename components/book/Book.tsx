@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { book } from "@/content/book";
 import { mountBook } from "./engine";
-import { numberWord } from "./pages";
+import { indexEntries, numberWord, typesetChapter } from "./pages";
 
 type BookProps = {
   serif: string;
@@ -23,8 +23,46 @@ function inline(text: string): ReactNode[] {
   );
 }
 
-function Reader({ serifClassName, onClose }: { serifClassName: string; onClose: () => void }) {
+function Reader({
+  serif,
+  serifClassName,
+  onClose,
+}: {
+  serif: string;
+  serifClassName: string;
+  onClose: () => void;
+}) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const [pages, setPages] = useState<Record<number, number>>({});
+
+  useEffect(() => {
+    let cancel = false;
+    const measure = () => {
+      if (cancel) return;
+      let number = 1;
+      const written = book.chapters.map((chapter) => {
+        const chapterPages = typesetChapter(chapter, { serif }, number);
+        number += chapterPages.length;
+        return { chapter, pages: chapterPages };
+      });
+      const next: Record<number, number> = {};
+      for (const entry of indexEntries(written)) next[entry.number] = entry.page;
+      setPages(next);
+    };
+    const fonts = document.fonts;
+    if (!fonts) {
+      measure();
+      return;
+    }
+    fonts
+      .load(`400 28px ${serif}`)
+      .then(() => fonts.load(`italic 400 28px ${serif}`))
+      .then(measure)
+      .catch(measure);
+    return () => {
+      cancel = true;
+    };
+  }, [serif]);
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -54,8 +92,31 @@ function Reader({ serifClassName, onClose }: { serifClassName: string; onClose: 
       <article className={`${serifClassName} mx-auto w-full max-w-[34rem] text-white/90`}>
         <p className="text-xs tracking-[0.35em] text-white/40 uppercase">{book.author}</p>
         <h1 className="mt-3 text-5xl font-light">{book.title}</h1>
+        <nav aria-label="index" className="mt-14">
+          <p className="text-xs tracking-[0.35em] text-white/40 uppercase">index</p>
+          <ol className="mt-6 grid gap-5">
+            {book.chapters.map((chapter) => (
+              <li key={chapter.number}>
+                <a href={`#chapter-${chapter.number}`} className="block">
+                  <span className="text-xs tracking-[0.25em] text-white/40 uppercase">
+                    chapter {numberWord(chapter.number)}
+                  </span>
+                  <span className="mt-1 flex items-baseline gap-3">
+                    <span className="text-2xl font-light text-white">{chapter.title}</span>
+                    {pages[chapter.number] != null ? (
+                      <>
+                        <span className="h-px flex-1 bg-white/20" />
+                        <span className="text-white/45">{pages[chapter.number]}</span>
+                      </>
+                    ) : null}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
         {book.chapters.map((chapter) => (
-          <section key={chapter.number} className="mt-16">
+          <section key={chapter.number} id={`chapter-${chapter.number}`} className="mt-16 scroll-mt-24">
             <p className="text-xs tracking-[0.35em] text-white/40 uppercase">
               chapter {numberWord(chapter.number)}
             </p>
@@ -184,7 +245,7 @@ export default function Book({ serif, serifClassName }: BookProps) {
         </button>
       </nav>
 
-      {readerOpen ? <Reader serifClassName={serifClassName} onClose={closeReader} /> : null}
+      {readerOpen ? <Reader serif={serif} serifClassName={serifClassName} onClose={closeReader} /> : null}
     </div>
   );
 }

@@ -83,6 +83,57 @@ export function drawTitlePage(pw: number, book: Book, fonts: Fonts) {
   return c;
 }
 
+export type IndexEntry = { number: number; title: string; page: number };
+
+// chapter order, and the writing page each one opens on
+export function indexEntries(chapters: { chapter: Chapter; pages: WritingPage[] }[]): IndexEntry[] {
+  return chapters.flatMap(({ chapter, pages }) =>
+    pages.length ? [{ number: chapter.number, title: chapter.title, page: pages[0].number }] : [],
+  );
+}
+
+export function drawIndexPage(pw: number, entries: IndexEntry[], fonts: Fonts) {
+  const { c, g } = flat(pw, PAPER, 0.35);
+  g.textBaseline = "alphabetic";
+  g.textAlign = "left";
+  g.fillStyle = MUTED;
+  g.font = `400 18px ${fonts.serif}`;
+  spacedText(g, "INDEX", MARGIN_X, 250, 6, "left");
+
+  let y = 400;
+  for (const entry of entries) {
+    g.fillStyle = MUTED;
+    g.font = `400 16px ${fonts.serif}`;
+    spacedText(g, `CHAPTER ${numberWord(entry.number).toUpperCase()}`, MARGIN_X, y, 4, "left");
+
+    const titleY = y + 62;
+    const pageLabel = String(entry.page);
+    g.font = `400 22px ${fonts.serif}`;
+    const pageW = g.measureText(pageLabel).width;
+    const pageX = PW - MARGIN_X - pageW;
+    const titleSize = fitSize(g, entry.title, (s) => `300 ${s}px ${fonts.serif}`, pageX - MARGIN_X - 48, 42);
+    g.fillStyle = INK;
+    g.font = `300 ${titleSize}px ${fonts.serif}`;
+    g.fillText(entry.title, MARGIN_X, titleY);
+    const titleW = g.measureText(entry.title).width;
+
+    g.font = `400 22px ${fonts.serif}`;
+    g.fillStyle = MUTED;
+    g.fillText(pageLabel, pageX, titleY);
+
+    const ruleL = MARGIN_X + titleW + 16;
+    const ruleR = pageX - 16;
+    if (ruleR - ruleL > 24) {
+      g.fillStyle = "rgba(31,31,31,.22)";
+      g.fillRect(ruleL, titleY - 8, ruleR - ruleL, 1);
+    }
+    y += 148;
+  }
+
+  finishPage(c, "R", false);
+  return c;
+}
+
 export function drawEndingPage(pw: number, book: Book, fonts: Fonts) {
   const { c, g } = flat(pw, PAPER, 0.35);
   g.textAlign = "center";

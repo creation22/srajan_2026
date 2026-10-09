@@ -122,5 +122,44 @@ let's see what happens.
 and honestly, i am incredibly grateful to God for all of this. for the work, for the people around me, and for the fact that i even get to spend time building my own stuff and learning the things i care about. a lot of people never get that chance. i don't want to waste it. so i am going to keep showing up, keep building, and release more of what i make, even when it isn't perfect.
 `,
     },
+    {
+      number: 2,
+      title: "the grind",
+      wallpapers: [
+        {
+          src: "/book/chapter-two.png",
+          alt: "the grind.",
+        },
+      ],
+      text: `
+when does the grind end.
+
+when i was really young, every year a summer vacation came and it felt like the same question. when will the time come when i don't have to. when i can just lie in my bed and enjoy the day by doing nothing at all. i thought that day was waiting somewhere after school. a permanent version of the vacation. a life where nothing was being asked of me.
+
+that time never came.
+
+i kept looking for it, year after year, and it was never there. and the longer i sit with that, the less it feels like bad news. life has very little meaning when you are not putting in the work. i mean that in the plain way. if you are not working, what are you actually going to do. you can rest. rest is real, and some days you should take it. but a whole life of not doing anything is not peace. it is a person slowly becoming less of a person. at a certain point the people who love you get bored of you too. not because they are cruel. because love is a kind of attention, and there is less and less to attend to in someone who has stopped becoming anything.
+
+so i don't think the empty day was ever the point. i think i was wrong about what i was waiting for. i really enjoy the time when i am working on something meaningful. the day feels like it belongs to me then, in a way the empty ones never did. the work is not the thing i do until my life starts. a lot of the time, the work is the life.
+
+there is a good test for whether you are working on something that is actually yours. watch how the day moves. if it passes quickly, you are in it. you will not get the time to step outside and ask whether you enjoy this. that question only shows up when the hours drag and you are watching yourself work. a fast day has already answered.
+
+there will be stretches where you cannot give time to the people you love, or to the small playful things that make a week feel human. i think that is fine. there are seasons of ultimate grind. i am in one. i have to keep my head down and work, for at least the next five years, if i want to reach a place that is actually good. not a soft place someone hands me. a place i have earned, where the work is mine and i am not being carried.
+
+nothing comes easy. if someone tells you there is a way to earn money easily, i don't think that way exists. what exists is a long stretch of hard work in the background, and then a last inch that looks easy to everyone who wasn't there for the rest of it. i would rather be the person in the background.
+
+so the work of this season is simple, and it is not short. work really well. then, after a certain point, chase a real balance, so i can give time back to the people i love. the grind is not the whole of a good life. it is the part that comes first. five years with my head down, and then a life that has room in it again.
+
+---
+
+the body has started to disagree with me.
+
+for the last few days my back has been in severe pain. it is an ordinary problem, and it is also the most useful thing i have felt all week. if i am not taking care of my health, i cannot sustain this for any serious length of time. the five years are a story i am telling myself if my back gives out in the second month. a season of grind that destroys the body is not a season. it ends the work early, and then you have neither the achievement nor the health.
+
+so this is the right time to join the gym. not as a reward for later, and not as something i will get to once the work calms down. the work is not going to calm down. health is not a break from the grind. it is the only reason the grind can last. if i want the next five years, i have to be a person who can still stand up for them.
+
+the day with nothing to do is not coming. i don't think i want it anymore. i want the days to pass quickly because the work means something, and i want to still be healthy enough, when those five years are over, to give time to the people i love.
+`,
+    },
   ],
 };
